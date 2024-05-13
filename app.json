@@ -22,6 +22,22 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/CormorantGaramond-Bold.ttf",
+            "./assets/fonts/CormorantGaramond-Italic.ttf",
+            "./assets/fonts/CormorantGaramond-Light.ttf",
+            "./assets/fonts/CormorantGaramond-Medium.ttf",
+            "./assets/fonts/CormorantGaramond-Regular.ttf",
+            "./assets/fonts/CormorantGaramond-SemiBold.ttf",
+            "./assets/fonts/DawningofaNewDay-Regular.ttf"
+          ]
+        }
+      ]
+    ]
   }
 }

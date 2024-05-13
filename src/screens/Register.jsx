@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const SignUpScreen = () => {
+const Register = () => {
   return (
     <View>
       <Text>SignUpScreen</Text>
@@ -9,4 +9,4 @@ const SignUpScreen = () => {
   );
 };
 
-export default SignUpScreen;
+export default Register;

@@ -11,7 +11,7 @@ import WelcomeScreen from "./src/screens/WelcomeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import LogInScreen from "./src/screens/LogInScreen";
-import SignUpScreen from "./src/screens/SignUpScreen";
+import Register from "./src/screens/Register";
 
 const Stack = createNativeStackNavigator();
 
@@ -51,8 +51,8 @@ export default function App() {
             }}
           />
           <Stack.Screen
-            name="Signup"
-            component={SignUpScreen}
+            name="Register"
+            component={Register}
             options={{
               headerShown: false,
             }}

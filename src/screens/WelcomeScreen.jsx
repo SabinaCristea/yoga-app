@@ -2,28 +2,41 @@ import {
   View,
   Text,
   StyleSheet,
-
-  // BackgroundImage,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
-import { Image } from "expo-image";
 import React from "react";
 import { BackgroundImage } from "react-native-elements/dist/config";
-// import { TouchableOpacity } from "react-native-gesture-handler";
+import { useFonts } from "expo-font";
 
 const WelcomeScreen = ({ navigation }) => {
+  const [fontsLoaded] = useFonts({
+    "CG-Bold": require("../../assets/fonts/CormorantGaramond-Bold.ttf"),
+    "CG-Italic": require("../../assets/fonts/CormorantGaramond-Italic.ttf"),
+    "CG-Light": require("../../assets/fonts/CormorantGaramond-Light.ttf"),
+    "CG-Medium": require("../../assets/fonts/CormorantGaramond-Medium.ttf"),
+    "CG-Regular": require("../../assets/fonts/CormorantGaramond-Regular.ttf"),
+    "CG-SemiBold": require("../../assets/fonts/CormorantGaramond-SemiBold.ttf"),
+    "DND-Regular": require("../../assets/fonts/DawningofaNewDay-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
+
   return (
     <BackgroundImage
       source={require("../../assets/mountain-meditating.jpg")}
       style={styles.backgroundImage}
     >
-      <View style={styles.overlay}>
-        <Text style={styles.title}>Welcome to Your Mindful Journey</Text>
+      <SafeAreaView style={styles.overlay}>
+        <Text style={styles.title}>Welcome</Text>
+        <Text style={styles.subTitle}>to your mindful journey</Text>
         <Text style={styles.text1}>
-          Discover peace and strength through mindfulness and yoga.
+          Discover peace and strength through mindfulness and yoga
         </Text>
         <Text style={styles.text2}>
-          Embrace the present, breathe deeply, and find balance.
+          Embrace the present, breathe deeply, and find balance
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -35,13 +48,13 @@ const WelcomeScreen = ({ navigation }) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("Signup")}
+            onPress={() => navigation.navigate("Register")}
             style={styles.btn}
           >
-            <Text style={styles.btnText}>Sign Up</Text>
+            <Text style={styles.btnText}>Register</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </SafeAreaView>
     </BackgroundImage>
   );
 };
@@ -55,42 +68,54 @@ const styles = StyleSheet.create({
   },
   overlay: {
     flex: 1,
-    // alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.3)",
-    paddingTop: 80,
+    backgroundColor: "rgba(255, 255, 255, 0.0)",
+    paddingTop: 90,
     paddingHorizontal: 50,
   },
   title: {
-    fontSize: 30,
+    fontFamily: "CG-Bold",
+    fontSize: 50,
     textAlign: "center",
-    fontWeight: "bold",
-    marginBottom: 50,
+    textTransform: "uppercase",
+    color: "#31292f",
+    marginBottom: -5,
+  },
+  subTitle: {
+    fontFamily: "CG-Regular",
+    fontSize: 25,
+    textAlign: "center",
+    marginBottom: 45,
+    color: "#31292f",
   },
   text1: {
-    fontSize: 18,
+    fontFamily: "DND-Regular",
+    fontSize: 30,
     textAlign: "center",
-    marginBottom: 15,
+    marginBottom: 350,
+    lineHeight: 40,
   },
   text2: {
-    fontSize: 18,
+    fontFamily: "DND-Regular",
+    fontSize: 30,
     textAlign: "center",
-    marginBottom: 15,
+    color: "white",
+    lineHeight: 40,
   },
-
   buttonContainer: {
-    marginTop: 380,
-    gap: 20,
+    marginTop: 20,
+    gap: 15,
   },
   btn: {
     backgroundColor: "white",
+    opacity: 0.9,
     borderRadius: 100,
-    paddingVertical: 13,
+    paddingVertical: 15,
     elevation: 10,
   },
   btnText: {
+    fontFamily: "CG-Bold",
     fontSize: 20,
     textTransform: "uppercase",
     textAlign: "center",
-    fontWeight: "bold",
   },
 });
