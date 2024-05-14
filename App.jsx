@@ -47,6 +47,8 @@ export default function App() {
             name="Login"
             component={LogInScreen}
             options={{
+              // headerTitle: "",
+              // headerTransparent: true,
               headerShown: false,
             }}
           />

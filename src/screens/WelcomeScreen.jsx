@@ -8,6 +8,7 @@ import {
 import React from "react";
 import { BackgroundImage } from "react-native-elements/dist/config";
 import { useFonts } from "expo-font";
+import { colors } from "../styles/colors";
 
 const WelcomeScreen = ({ navigation }) => {
   const [fontsLoaded] = useFonts({
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     flex: 1,
-    backgroundColor: "rgba(255, 255, 255, 0.0)",
+    // backgroundColor: "rgba(255, 255, 255, 0.0)",
     paddingTop: 90,
     paddingHorizontal: 50,
   },
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     textAlign: "center",
     textTransform: "uppercase",
-    color: "#31292f",
+    color: colors.darkCharcoal,
     marginBottom: -5,
   },
   subTitle: {
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: "center",
     marginBottom: 45,
-    color: "#31292f",
+    color: colors.darkCharcoal,
   },
   text1: {
     fontFamily: "DND-Regular",
@@ -102,12 +103,12 @@ const styles = StyleSheet.create({
     lineHeight: 40,
   },
   buttonContainer: {
+    // flexGrow: 1,
     marginTop: 20,
     gap: 15,
   },
   btn: {
-    backgroundColor: "white",
-    opacity: 0.9,
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
     borderRadius: 100,
     paddingVertical: 15,
     elevation: 10,
@@ -117,5 +118,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textTransform: "uppercase",
     textAlign: "center",
+    color: colors.darkCharcoal,
   },
 });
